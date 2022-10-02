@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Termination Imminent.ogg-0b382ddfa774ea3e89e63d0dd6faf159.oggstr"
+
+[deps]
+
+source_file="res://Audio/Music/Termination Imminent.ogg"
+dest_files=[ "res://.import/Termination Imminent.ogg-0b382ddfa774ea3e89e63d0dd6faf159.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

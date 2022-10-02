@@ -1,0 +1,117 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://scripts/Kamera.gd" type="Script" id=1]
+[ext_resource path="res://scripts/UI.gd" type="Script" id=2]
+[ext_resource path="res://Sprites/silah/NoWeaponHUD.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/HUD_Stuff/Bomb_Tick_Light.png" type="Texture" id=4]
+[ext_resource path="res://themes/deftheme.tres" type="Theme" id=5]
+[ext_resource path="res://Sprites/silah/crosshair.png" type="Texture" id=6]
+
+[node name="Kamera" type="Camera2D"]
+current = true
+zoom = Vector2( 2, 2 )
+process_mode = 0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="HUD" type="CanvasLayer" parent="."]
+
+[node name="UI" type="Control" parent="HUD"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 5 )
+script = ExtResource( 2 )
+
+[node name="Warnings" type="Control" parent="HUD/UI"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HUD/UI/Warnings"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -101.5
+margin_top = 8.0
+margin_right = 97.5
+margin_bottom = 57.0
+alignment = 1
+
+[node name="WarningText" type="Label" parent="HUD/UI/Warnings/VBoxContainer"]
+modulate = Color( 1, 0, 0, 1 )
+margin_top = 12.0
+margin_right = 199.0
+margin_bottom = 18.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Time Until Subject Termination"
+align = 1
+valign = 1
+
+[node name="WarningCountdown" type="Label" parent="HUD/UI/Warnings/VBoxContainer"]
+margin_top = 22.0
+margin_right = 199.0
+margin_bottom = 37.0
+text = "10
+"
+align = 1
+
+[node name="BombTickLight" type="Sprite" parent="HUD/UI/Warnings"]
+texture = ExtResource( 4 )
+centered = false
+
+[node name="WarningActivity" type="Label" parent="HUD/UI/Warnings"]
+modulate = Color( 1, 0, 0, 1 )
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -101.5
+margin_top = -24.0
+margin_right = 97.5
+margin_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Illegal Activity : Tresspassing"
+align = 1
+valign = 1
+
+[node name="GunStuff" type="VBoxContainer" parent="HUD/UI"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="GunImage" type="TextureRect" parent="HUD/UI/GunStuff"]
+margin_right = 64.0
+margin_bottom = 32.0
+texture = ExtResource( 3 )
+
+[node name="AmmoCount" type="Label" parent="HUD/UI/GunStuff"]
+margin_top = 36.0
+margin_right = 64.0
+margin_bottom = 42.0
+text = "AMMO: "
+
+[node name="DarkAlarm" type="ColorRect" parent="HUD/UI"]
+margin_right = 6400.0
+margin_bottom = 6400.0
+color = Color( 1, 0, 0, 0.0784314 )
+
+[node name="Death" type="Label" parent="HUD"]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -66.0
+margin_top = -7.5
+margin_right = 66.0
+margin_bottom = 7.5
+theme = ExtResource( 5 )
+text = "YOU ARE DEAD
+Press Space to Restart"
+align = 1
+
+[node name="Crosshair" type="Sprite" parent="."]
+scale = Vector2( 2, 2 )
+z_index = 8
+texture = ExtResource( 6 )

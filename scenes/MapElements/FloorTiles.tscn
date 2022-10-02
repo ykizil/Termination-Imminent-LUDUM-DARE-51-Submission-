@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Sprites/tilings/RegularFloor.png" type="Texture" id=1]
+
+[node name="FloorTiles" type="Sprite"]
+modulate = Color( 0.470588, 0.470588, 0.470588, 1 )
+scale = Vector2( 2, 2 )
+z_index = -16
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 6400, 6400 )
+__meta__ = {
+"_edit_lock_": true
+}
